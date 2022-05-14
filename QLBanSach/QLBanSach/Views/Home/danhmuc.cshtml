@@ -1,0 +1,61 @@
+﻿@model PagedList.IPagedList<QLBanSach.Models.SACH>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@{
+    ViewBag.Title = "danhmuc";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<div class="banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="caption">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>*@
+<div class="products">
+    <div class="container">
+        <div class="row">
+            @{
+                Html.RenderAction("ListDM", "Home");
+            }
+            <div class="col-md-12">
+                <div class="filters-content">
+                    <div class="row grid">
+                        @foreach (var item in Model)
+                        {
+                            <div class="col-lg-4 col-md-4 all tg4">
+                                <div class="product-item" style="height:510px">
+                                    <a href="@Url.Action("chitietsp","Home", new { id = item.MaSach.ToString().Trim()})">
+                                        @{
+                                            //Lấy đường dẫn file ảnh
+                                            string ImagePath = "~/wwwroot/assets/img/" + item.AnhBia;
+                                        }
+                                        <img src="@Url.Content(ImagePath)" atl="" width="100" height="350" />
+                                    </a>
+                                    <div class="down-content">
+                                        <a href="@Url.Action("chitietsp","Home", new { id = item.MaSach.ToString().Trim()})"><h4>@Html.DisplayFor(modelItem => item.TieuDe)</h4></a>
+
+
+                                        <h4 style="color:red">
+                                            Giá bán: @Html.DisplayFor(modelItem => item.GiaBan) VND
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <br />
+                Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+                @Html.PagedListPager(Model, page => Url.Action("danhmuc", new { page }))
+            </div>
+        </div>
+    </div>
+</div>
+

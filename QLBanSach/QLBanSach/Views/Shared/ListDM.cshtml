@@ -1,0 +1,22 @@
+﻿@model IEnumerable<QLBanSach.Models.DMSACH>
+<div class="col-md-12">
+    <div class="filters">
+        <ul>
+            <h2>Danh Mục sách</h2>
+            <br />
+            <br />
+            <a href="@Url.Action("danhmuc","Home")">Xem tất cả sách &nbsp;</a>
+            @foreach (var item in Model)
+            {
+            
+                    
+                <a href="@Url.Action("danhmuc","Home",new {id = item.MaDM.ToString().Trim()})">
+                        @Html.DisplayFor(modelItem => item.TenDM)
+                        &nbsp;
+                    
+                </a>
+                
+            }
+        </ul>
+    </div>
+</div>

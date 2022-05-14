@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <title>Nhà sách Nhóm 4</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/wwwroot/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="~/wwwroot/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="~/wwwroot/assets/css/templatemo-sixteen.css">
+    <link rel="stylesheet" href="~/wwwroot/assets/css/owl.css">
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><h2><img src="~/wwwroot/assets/images/logoJ.PNG" height="60px"></h2></a>
+            
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link">
+                                @Html.ActionLink("Trang chủ", "Index", "Home")
+
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link">@Html.ActionLink("Danh mục sách", "danhmuc", "Home")</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link">@Html.ActionLink("Thông tin", "About", "Home")</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Content -->
+    <!-- Banner Starts Here -->
+    <div class="banner header-text">
+        <div class="owl-banner owl-carousel">
+            <img src="~/wwwroot/assets/images/unnamed.jpg" alt="" height="300px">
+        </div>
+    </div>
+    <!-- Banner Ends Here -->
+    @RenderBody()
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="inner-content">
+                        <div class="footer-menu">
+                            <ul>
+                                <li><a href="#">Trang chủ</a></li>
+                                <li><a href="#">Giúp đỡ</a></li>
+                                <li><a href="#">Điều khoản</a></li>
+                                <li><a href="#">Liên hệ</a></li>
+                            </ul>
+                        </div>
+                        <p>
+                            Copyright &copy; 2022 Nhóm 4
+
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="~/wwwroot/vendor/jquery/jquery.min.js"></script>
+    <script src="~/wwwroot/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- Additional Scripts -->
+    <script src="~/wwwroot/assets/js/custom.js"></script>
+    <script src="~/wwwroot/assets/js/owl.js"></script>
+    <script src="~/wwwroot/assets/js/slick.js"></script>
+    <script src="~/wwwroot/assets/js/isotope.js"></script>
+    <script src="~/wwwroot/assets/js/accordions.js"></script>
+
+
+    <script language="text/Javascript">
+
+        cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+        function clearField(t) {                   //declaring the array outside of the
+            if (!cleared[t.id]) {                      // function makes it static and global
+                cleared[t.id] = 1;  // you could use true and false, but that's more typing
+                t.value = '';         // with more chance of typos
+                t.style.color = '#fff';
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>

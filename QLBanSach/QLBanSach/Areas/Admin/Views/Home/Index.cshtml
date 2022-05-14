@@ -1,0 +1,114 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link href="~/Areas/Admin/assets/css/styles.css" rel="stylesheet" />
+    <script src="~/Areas/Admin/assets/js/all.min.js"></script>
+    <link rel="stylesheet" href="~/Areas/Admin/assets/css/bootstrap.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <nav class="sb-topnav navbar navbar-expand navbar-light bg-info">
+        <a class="navbar-brand" href="@Url.Action("Index","Home")"><i class="bi bi-person-circle"></i>Admin</a>
+        <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#">
+            <i class="fas fa-bars"></i>
+        </button>
+
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-footer bg-light" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <div class="sb-sidenav-menu-heading">Menu quản trị</div>
+                        <ul class="list-unstyled ps-0 ">
+                            <li class="mb-1">
+                                <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+                                    Quản lí <i class="bi bi-caret-down"></i>
+                                </button>
+                                <div class="collapse show" id="home-collapse">
+                                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small ">
+                                        <li class="pb-2 pt-2"><a href="@Url.Action("Index","SACHes")" class="link-dark rounded ps-4 text-decoration-none text-info"><i class="fas fa-table"></i> Sách</a></li>
+
+
+                                    </ul>
+                                </div>
+                            </li>
+
+
+                            <li class="border-top my-3"></li>
+                            <li class="mb-1">
+                                <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+                                    Tài khoản   <i class="bi bi-caret-down"></i>
+                                </button>
+                                <div class="collapse" id="account-collapse">
+                                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                        <li class="pb-2 pt-2"><a href="@Url.Action("Login","Home")" class="link-dark rounded ps-4 text-decoration-none text-info"><i class="bi bi-person-dash-fill"></i>Dăng Xuất</a></li>
+
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <br />
+                <div class="sb-sidenav-footer">
+                    <div class="small">Chào mừng admin:</div>
+                    <a>@Session["hoten"]</a>
+
+                </div>
+
+            </nav>
+        </div>
+        <div id="layoutSidenav_content">
+
+            <main>
+                <div class="container-fluid">
+                    <h1 class="mt-4">Chào mừng quản trị viên</h1>
+
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <p class="mb-0">
+                                Hãy bắt đầu quản trị trang web của bạn!
+
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer>
+                <div class="container-fluid end">
+                    <div class="row text-center">
+
+                        <div class="col-lg-12">
+                            2022 CopyRight Website bán sách online | Design by <a href="#">Nhóm 4</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="~/Areas/Admin/assets/js/jquery-3.5.1.min.js"></script>
+
+    <script src="~/Areas/Admin/assets/js/scripts.js"></script>
+</body>
+
+</html>
+
+

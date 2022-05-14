@@ -1,0 +1,65 @@
+﻿@model QLBanSach.Areas.Admin.Models.SACH
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutSach.cshtml";
+}
+
+<h2>Xóa Sách</h2>
+<h3>Bạn có muốn xóa cuốn sách này không?</h3>
+
+<div>
+    <h4>SACH</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DMSACH.TenDM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DMSACH.TenDM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TieuDe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TieuDe)
+        </dd>
+
+        <dt>
+
+            @Html.DisplayNameFor(model => model.AnhBia)
+        </dt>
+
+        <dd>
+            @{
+                //Lấy  đường  dẫn  file  ảnh
+                string ImagePath = "~/Areas/Admin/assets/img/" + Model.AnhBia;
+            }
+            <img src="@Url.Content(ImagePath)" width="100" class="img-thumbnail" />
+            <br />
+            @Html.DisplayFor(model => model.AnhBia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GiaBan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GiaBan)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Đồng ý" class="btn btn-default" />
+            @Html.ActionLink("Không đồng ý", "Index")
+        </div>
+    }
+</div>

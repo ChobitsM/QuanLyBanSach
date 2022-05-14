@@ -1,0 +1,129 @@
+﻿@model QLBanSach.Models.SACH
+@{
+    ViewBag.Title = "chitietsp";
+    string ImagePath = "~/wwwroot/assets/img/" + Model.AnhBia;
+}
+
+<!-- Single Starts Here -->
+
+<div class="latest-products">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-heading">
+                    <h1>Chi tiết sách</h1>
+                    <a href="@Url.Action("danhmuc","Home")">Xem tất cả sách <i class="fa fa-angle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="product-slider">
+                    <div id="slider" class="flexslider">
+                        <img src="@Url.Content(ImagePath)" atl="" width="250" height="400" />
+                    </div>
+                    <!--<div id="carousel" class="flexslider">
+              <ul class="slides">
+                <li>
+                  <img src="assets/images/thumb-01.jpg" />
+                </li>
+                <li>
+                  <img src="assets/images/thumb-02.jpg" />
+                </li>
+                <li>
+                  <img src="assets/images/thumb-03.jpg" />
+                </li>
+                <li>
+                  <img src="assets/images/thumb-04.jpg" />
+                </li>
+
+              </ul>
+            </div>-->
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="right-content">
+                    <h2>@Html.DisplayFor(model => model.TieuDe)</h2>
+                    <h4 style="color:red">Giá bán: @Html.DisplayFor(model => model.GiaBan) VND</h4>
+                    <p>Danh mục: @Html.DisplayFor(model => model.DMSACH.TenDM)</p>
+                    @*<p>Mô tả: Bí Mật Tình Yêu 2 là những câu chuyện tình diễm lệ với những kết thúc hoàn hảo, mà tác giả sẽ làm ta bất ngờ trước sự tinh tế của ông. Tình yêu ở đây được nhìn nhận, phân tích, soi xét một cách thẳng thắn và thấu đáo.</p>
+                <p>Kích thước: 13 x 20.5 cm</p>*@
+                    <!--<form action="" method="get">
+              <label for="quantity">Quantity:</label>
+              <input name="quantity" type="quantity" class="quantity-text" id="quantity"
+                  onfocus="if(this.value == '1') { this.value = ''; }"
+                  onBlur="if(this.value == '') { this.value = '1';}"
+                  value="1">
+              <input type="submit" class="button" value="Order Now!">
+            </form>-->
+                </div>
+            </div>
+            @Html.ActionLink("Quay lại", "danhmuc")
+        </div>
+    </div>
+</div>
+<!-- Single Page Ends Here -->
+<!-- Similar Starts Here -->
+@*<div class="latest-products">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-heading">
+                    <h1>Bạn có thể xem</h1>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <a href="chitietsp.html">
+                    <div class="product-item">
+                        <img src="~/wwwroot/assets/images/sach-que.jpg" alt="">
+                        <h5>Tiêu đề sách</h5>
+                        <p>Giá bán: 100.000 vnđ</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="chitietsp.html">
+                    <div class="product-item">
+                        <img src="~/wwwroot/assets/images/sach-sieu-tri-tue-cau-do-luyen-tu-duy.jpg" alt="">
+                        <h5>Tiêu đề sách</h5>
+                        <p>Giá bán: 100.000 vnđ</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="chitietsp.html">
+                    <div class="product-item">
+                        <img src="~/wwwroot/assets/images/sach-chung-ta-qua-cach-viet.jpg" alt="">
+                        <h5>Tiêu đề sách</h5>
+                        <p>Giá bán: 100.000 vnđ</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="chitietsp.html">
+                    <div class="product-item">
+                        <img src="~/wwwroot/assets/images/sach-huong-dan-su-dung-tinh-yeu.jpg" alt="">
+                        <h5>Tiêu đề sách</h5>
+                        <p>Giá bán: 100.000 vnđ</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="chitietsp.html">
+                    <div class="product-item">
+                        <img src="~/wwwroot/assets/images/sach-mo-duong-cho-minh.jpg" alt="">
+                        <h5>Tiêu đề sách</h5>
+                        <p>Giá bán: 100.000 vnđ</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="chitietsp.html">
+                    <div class="product-item">
+                        <img src="~/wwwroot/assets/images/sach-dat-nuoc-que-huong.jpg" alt="">
+                        <h5>Tiêu đề sách</h5>
+                        <p>Giá bán: 100.000 vnđ</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>*@

@@ -1,0 +1,82 @@
+﻿@model IEnumerable<QLBanSach.Areas.Admin.Models.SACH>
+@*@model PagedList.IPagedList<QLBanSach.Areas.Admin.Models.SACH>
+@using PagedList.Mvc;*@
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutSach.cshtml";
+}
+
+<h2>Quản lý sách</h2>
+
+<p class="timkiemtacgia"><b>TÌM KIẾM SÁCH:</b></p><Br><Br>
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Nhập tên sách cần tìm...">
+<i class="fa fa-search" aria-hidden="true"></i>
+
+<form action=""></form>
+<b>CHỨC NĂNG CHÍNH:</b><Br>
+<p>
+    @Html.ActionLink("Thêm mới", "Create")
+</p>
+@*<p>
+        @Html.ActionLink("Thêm mới", "Create")
+    </p>*@
+<div class="table-title">
+    <div class="row">
+
+    </div>
+
+</div>
+<table class="table table-bordered" id="myTable">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DMSACH.TenDM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TieuDe)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnhBia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GiaBan)
+        </th>
+        <th>
+            Tính năng
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DMSACH.TenDM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TieuDe)
+            </td>
+            <td>
+                @{
+                    //Lấy  đường  dẫn  file  ảnh
+                    string ImagePath = "~/Areas/Admin/assets/img/" + item.AnhBia;
+                }
+                <img src="@Url.Content(ImagePath)" width="100" class="img-thumbnail" />
+                <br />
+                @Html.DisplayFor(modelItem => item.AnhBia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GiaBan)
+            </td>
+            <td>
+                @Html.ActionLink("Sửa", "Edit", new { id = item.MaSach }) |
+                @*@Html.ActionLink("Details", "Details", new { id=item.MaSach }) |*@
+                @Html.ActionLink("Xóa", "Delete", new { id = item.MaSach })
+            </td>
+        </tr>
+    }
+
+</table>
+@*<div class="col-md-12">
+    <br />
+    Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+    @Html.PagedListPager(Model, page => Url.Action("danhmuc", new { page }))
+</div>*@
