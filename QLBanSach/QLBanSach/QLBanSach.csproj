@@ -239,8 +239,8 @@
     <Content Include="wwwroot\assets\images\anh3.jpg" />
     <Content Include="wwwroot\assets\images\anh4.jpg" />
     <Content Include="wwwroot\assets\images\feature-image.jpg" />
-    <Content Include="wwwroot\assets\images\logoJ.PNG" />
     <Content Include="wwwroot\assets\images\products-heading.jpg" />
+    <Content Include="wwwroot\assets\images\sach.png" />
     <Content Include="wwwroot\assets\images\slide_01.jpg" />
     <Content Include="wwwroot\assets\images\slide_02.jpg" />
     <Content Include="wwwroot\assets\images\slide_03.jpg" />
